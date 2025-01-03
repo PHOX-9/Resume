@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d778213d58.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="#header"> <i class="fa-solid fa-house"></i> Home </a></li>
+                <li><a href="#about"><i class="fa-solid fa-address-card"></i>About</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-folder"></i>Projects</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-address-book"></i>Contact</a></li>
+            </ul>
+
+        </nav>
+        <div class="header-text">
+            <h1>Home</h1>
+            <p>Aspiring Software Developer</p>
+            <h2>Hi! I am Ibrahim Raza Beg<br> and this is my Personal CV Webpage</h2>
+        </div>
+    </div>
+</div>
+<!-- ---------about-------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col1">
+                <img src="Photos/Trailblazer.png">
+            </div>
+            <div class="col2">
+                <h1>About Me</h1>
+                <p>Hello! My name is Ibrahim Raza Beg. I am a Fresher at IIIT Allahabad. I am an Aspiring Software Developer.
+                    I'm eager to learn and explore new technologies, improve my coding skills, and bring creative ideas to life on the web.</p>
+                
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li>Java  <i class="fa-brands fa-java"></i></li> 
+                        <li>C  <i class="devicon-c-plain"></i></li>
+                        <li>C#  <i class="devicon-csharp-plain"></i></li>
+                        <li>HTML  <i class="fa-solid fa-code"></i></li>
+                        <li>CSS  <i class="fa-brands fa-css"></i></li>
+                        <li>Javascript  <i class="fa-brands fa-js"></i></li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li>Indian Institute of Information Technology Allahabad <p>(2024-2028)</p></li>
+                        <li>RadhaBallabh Public School, Agra <p>(2022-2024)</p></li>
+                        <li>St.Conrad's Inter College, Agra <p>(2009-2022)</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- -------projects------- -->
+<div id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="text-col">
+                <h1>Projects</h1>
+                <p>Currently, I am building a strong foundation in HTML, CSS, and JavaScript,and I enjoy exploring how 
+                   design and functionality come together to create engaging websites.Thus, I haven't worked on any projects yet.</p>
+                <a href="https://github.com/PHOX-9"><i class="fa-brands fa-github"></i></i><strong> GitHub Profile </strong></a>
+            </div>
+            <div class="image-col">
+                <img src="Photos/projects.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ------------contact--------- -->
+ <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1>Contact Me</h1>
+                <a href="mailto:ibrahimrazabeg@gmail.com" class="icon"><i class="fa-solid fa-paper-plane"></i> ibrahimrazabeg@gmail.com</a>
+                <p> <i class="fa-solid fa-phone"></i> +91-976009XXXX</p>
+                <div class="social-media">
+                    <a href="https://discord.com/users/phox__"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.linkedin.com/in/ibrahim-raza-beg-0701a3315/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/PHOX-9"><i class="fa-brands fa-github"></i></i></a>
+                </div>
+                <a href="Photos/Ibrahim Raza Beg Resume .pdf" download class="btn btn2">Download CV</a>
+
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+
+    </div>
+ </div>
+
+
+<script>
+var tablinks=document.getElementsByClassName("tab-links");
+var tabcontents=document.getElementsByClassName("tab-contents");
+
+function opentab(tabname)
+{
+    for(tablink of tablinks)
+    tablink.classList.remove("active-link");
+
+    for(tabcontent of tabcontents)
+    tabcontent.classList.remove("active-tab");
+
+    event.currentTarget.classList.add("active-link");
+
+    document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxZaIjK7aYey0lEPkXbwL9dGZaLUgdWbMDPG9PV7ozs1jn09HJWwZTQK4de1o9xMB-f/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg=document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML=""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
